@@ -25,7 +25,6 @@ public class AerospikeConfiguration {
     public AerospikeClient aerospikeClient() {
         ClientPolicy clientPolicy = new ClientPolicy();
         clientPolicy.failIfNotConnected = true;
-        clientPolicy.writePolicyDefault.expiration = 3600;
         return new AerospikeClient(clientPolicy, "localhost", 3000);
     }
 
