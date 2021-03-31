@@ -7,6 +7,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.data.aerospike.cache.AerospikeCacheConfiguration;
 import org.springframework.data.aerospike.cache.AerospikeCacheManager;
 import org.springframework.data.aerospike.convert.AerospikeCustomConversions;
 import org.springframework.data.aerospike.convert.AerospikeTypeAliasAccessor;
@@ -34,7 +35,8 @@ public class AerospikeConfiguration {
 
     @Bean
     public AerospikeCacheManager cacheManager(AerospikeClient aerospikeClient) {
-        return new AerospikeCacheManager(aerospikeClient, mappingAerospikeConverter);
+        AerospikeCacheConfiguration defaultConfiguration = new AerospikeCacheConfiguration("test");
+        return new AerospikeCacheManager(aerospikeClient, mappingAerospikeConverter, defaultConfiguration);
     }
 }
 
