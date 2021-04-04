@@ -13,7 +13,8 @@ public class UserRepository {
 
     @Cacheable(value = "test", key = "#id")
     public Optional<User> getUserById(int id) {
-        System.out.println("Simulating a read from the main data store (cache miss).");
+        System.out.println("Simulating a read from the main data store.");
+        // In case the id doesn't exist in the cache it will "fetch" jimmy page with the requested id and add it to the cache (cache miss).
         return Optional.of(new User(id, "jimmy page", "jimmy@gmail.com", 77));
     }
 
