@@ -39,4 +39,3 @@ public class AerospikeConfiguration {
         return new AerospikeCacheManager(aerospikeClient, mappingAerospikeConverter, defaultConfiguration);
     }
 }
-
