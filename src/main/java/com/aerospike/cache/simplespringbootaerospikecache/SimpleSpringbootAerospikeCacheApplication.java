@@ -7,7 +7,7 @@ import org.springframework.cache.annotation.EnableCaching;
 @EnableCaching
 @SpringBootApplication
 public class SimpleSpringbootAerospikeCacheApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(SimpleSpringbootAerospikeCacheApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SimpleSpringbootAerospikeCacheApplication.class, args);
+    }
 }
